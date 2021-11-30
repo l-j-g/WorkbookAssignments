@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <title>LachlanGreve_T3A1.2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="LachlanGreve_T3A1.2_files/katex.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    <style>
+.vimvixen-console-frame {
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 2147483647;
+  border: none !important;
+  background-color: unset !important;
+  pointer-events:none;
+}
+
+.vimvixen-hint {
+  background-color: yellow;
+  border: 1px solid gold;
+  font-weight: bold;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2147483647;
+  font-size: 12px;
+  color: black;
+}
+</style></head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="t3a13-developer-workbook-database-systems">T3A1.3 - Developer Workbook: Database Systems</h1>
+
+<h3 class="mume-header" id="lachlan-greve">Lachlan Greve</h3>
+
+<h3 class="mume-header" id="date-281121">Date: 28/11/21</h3>
+
+<hr>
+<h2 class="mume-header" id="question-1">Question 1 :</h2>
+
+<p>Describe the properties of a database table in a relational database</p>
+<hr>
+<p>A table in a relational database conforms to normalisation rules that
+ are intended to reduce data redundancy and prevent data errors. <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>The first normal form (1NF) was introduced by E.F Codd in his 
+publication "A Relational Model of Data for Large Shared Data Banks" 
+(1970) <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> and described the following properties:</p>
+<ul>
+<li>
+<p><strong>Atomicity</strong>:  Each data point in a relational table 
+represents a single value. E.g. No table column can contain another 
+table as one of its values.</p>
+</li>
+<li>
+<p><strong>All of the values in a column have the same data type</strong>:
+  This property increases the integrity of the data in the database, 
+preventing the entry of invalid data that wouldn't make sense in the 
+context of the column.</p>
+</li>
+<li>
+<p><strong>Each row is unique</strong>:  In a relational database there 
+is no redundancy. Each row will have at least one column that uniquely 
+identifies that particular entry from all others in the database. A 
+unique identifier is often in the form of a primary (or foreign) key and
+ allows for each row of data to be identified and accessed individually.</p>
+</li>
+<li>
+<p><strong>Order of records do not matter</strong>: Relational databases
+ are designed to display, group and manipulate data based on provided 
+specific input queries, therefore the default order of rows or columns 
+is not important.</p>
+</li>
+<li>
+<p><strong>Each column has a unique name</strong>*: The name of a column
+ is used to query and select data that it contains. The name of each 
+column needs to be unique otherwise redundant data will be sorted within
+ the database.</p>
+</li>
+</ul>
+<p>In 1971 Codd further defined the second normal form (2NF) Rules<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>:</p>
+<ul>
+<li><strong>Table Conforms to 1NF</strong></li>
+<li><strong>No Partial Dependencies</strong>: To remove duplicate data 
+from a table, the table should only contain non-key data that is 
+exclusively dependent to the primary key of the table, not just part of 
+it. When the value of a field is not dependent on the primary key of the
+ table, the field should be moved to a separate table and linked to the 
+original table via a reference to the primary key of the original table.</li>
+</ul>
+<p>Later in 1971, Codd defined Third Normal Form (3NF) Rules<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup>:</p>
+<ul>
+<li><strong>Table Must be in 2NF</strong></li>
+<li><strong>No Transitive Dependencies</strong>: Similar to 2NF, a table
+ should only contain non-key data that is exclusive to the primary key 
+of the table. A transitive dependency is a field that is dependent on 
+another field, which in turn is dependent to the primary key field. 
+Transitive dependencies should be moved to a child table where the 
+primary key is the column that the columns were functionally dependent 
+on in the original table.</li>
+</ul>
+<p>In 1974 Codd and Raymond F. Boyce defined the Boyce-Codd normal form (BCNF)<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>:</p>
+<ul>
+<li><strong>Table must be in 3NF</strong></li>
+<li><strong>Determinants must be super-keys</strong>: This means that a 
+primary key can not include fields that have a dependency (transitive or
+ partial) on some other field that is not part of the primary key.</li>
+</ul>
+<p>An example is a table with fields Student-ID, Course and Educator 
+fields - The Student-ID and Course fields may be combined to form a 
+super-key that can uniquely identify each row. However, since there can 
+be multiple educators for each course, the Course field is dependent on 
+the Educator field and the table does not meet BCNF. To address this two
+ tables must be decomposed into two separate tables with fields 
+including Student/Course and another with Course/Educator.</p>
+<h2 class="mume-header" id="question-2">Question 2 :</h2>
+
+<p>Identify the three possible relationships between entities in a 
+relational database and explain how primary and foreign keys are used to
+ create a many-to-many relationship between tables.</p>
+<hr>
+<p>The three types of relationships between entities in a relational database are: <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<ol>
+<li>One-to-One</li>
+<li>One-to Many / Many-to-One</li>
+<li>Many-to-Many</li>
+</ol>
+<p>In a many to many relationship the record of one table can be related
+ to one or many records of another and, likewise the records of the 
+second table could be related to one or many records of the first.</p>
+<p>In many-to-many relationships a linking table is formed from the 
+primary key property of each table involved in the relationship. Primary
+ keys from other tables referenced in a linking table are known as 
+foreign keys with a new primary key being assigned for the linking 
+table. In this way, a many-to-many relationship is addressed by a 
+relational database by essentially separating the relationship into two 
+one-to-many relationships. <sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup></p>
+<p>An example of a many to many relationship is when a customer makes an
+ order from a store. Customers can purchase many items and, products can
+ by purchased by many customers. Therefore, this is a many to many 
+relationship. In this example the two primary keys from each entity (the
+ customer ID and the product ID) would be joined in a linking table 
+named orders. The orders table would be assigned an order_id primary key
+ that is unique to that order and would store both the customer id and 
+product id for the order as foreign keys.  In this way, many-to-many 
+relationships can be viewed as two connected one-to-many relationships: 
+ a (single) customer can make multiple orders and, multiple orders can 
+contain a product. <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<h2 class="mume-header" id="question-3">Question 3:</h2>
+
+<p>Constraints are restrictions on data. Describe three constrains which
+ can be applied to ensure data integrity in a relational database.</p>
+<hr>
+<p>Constraints enforce rules or requirements on data that can be 
+inserted, updated or deleted in a table of a RMDBs. A constraint can be 
+defined as either as a column constraint, which is a condition that 
+applies to data within the column only, or a table constraint - which 
+applies to more than one data column of a table. <sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+<ul>
+<li>
+<p>NOT NULL: This constraint prevent null values from being inserted 
+into a column. A null value has no data type and means that no value has
+ been entered. A nullability constraint is always a column constraint 
+and not a table constraint. A not null constraint can increase data 
+integrity by ensuring that data has been entered into row of a column.</p>
+</li>
+<li>
+<p>UNIQUE: The UNIQUE column constraint prevents duplicate values from 
+being inserted into a column. This constraint improves integrity of 
+databases by ensuring that each value in a column is different and 
+preventing duplicate values.</p>
+</li>
+<li>
+<p>PRIMARY KEY: A Primary Key constraint combines properties of both NOT
+ NULL and UNIQUE properties. Primary Keys are used to identify each row 
+of a table uniquely and generally has no other significance other than 
+being both UNIQUE and NOT NULL, I.E. - The primary key is used to 
+identify, rather than describe data.</p>
+</li>
+</ul>
+<p>A common syntax used to define constraint is (NOTE: other forms of syntax may also be acceptable):</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> table_name<span class="token punctuation">(</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+column_name data_type CONSTRAINT_TYPE
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="question-4">Question 4:</h2>
+
+<h2>Explain how data types enforce data integrity in a relational database.</h2>
+<p>Data integrity refers to the accuracy, consistency and reliability of
+ data that is stored in the database. In a relational database, domain 
+constraints are the most elementary way to enforce data integrity. 
+Domain constraints are a user defined set of rules that define the type 
+of data, data length and other attributes that the data must conform to 
+before it can be entered or altered in the database. <sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
+<p>A domain constraint definition consists of two parts:</p>
+<ol>
+<li>
+<p>Data type: The data type field specifies the range or domain of 
+values that are valid for an attribute. Relational databases can store 
+data of many different types including: numerical, boolean, date and 
+time types. These values are often specified along with a maximum size 
+or amount of memory that the field can take up in the database, this 
+helps to improve data integrity by preventing invalid data entries that 
+are too large.</p>
+</li>
+<li>
+<p>Constraint: Additional requirements that act as a filter or condition
+ that the data must conform to in order to be entered. Valid constraints
+ for data types include: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, 
+CHECK, DEFAULT.</p>
+</li>
+</ol>
+<h2 class="mume-header" id="question-5">Question 5:</h2>
+
+<p>SQL provides operations for the definition and manipulation of data 
+in a relational database. Describe the function of three operators and 
+support your answer with an example.</p>
+<hr>
+<p>In SQL, Data Manipulation Language (DML) is defined as language used 
+to for adding, deleting and modifying data in a database. Statements 
+written in DML make changes the data that is stored within database 
+objects but does not make changes to the schema of the database object.</p>
+<p>Common DML operations that are included in most Structured Query Language (SQL) distributions include<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>:</p>
+<ul>
+<li>
+<p>SELECT: Query data in the database. Allows the database user to 
+retrieve data from the database based on specific input criteria. The <code>SELECT</code> statement supports various optional clauses including:<br>
+The <code>FROM</code> clause, which specifies the name of the table(s) to retrieve results from.<br>
+The <code>WHERE</code> clause, which allows filtering of results that meet specific conditions.<br>
+The <code>ORDER BY</code>clause which specified how to order returned rows.<br>
+The <code>GROUP BY</code> clause, which allows for grouping of rows that share a property.</p>
+</li>
+<li>
+<p>INSERT: Adds data to a table in a relational database. The values 
+included in the insert statement must satisfy all of the existing 
+constraints that apply to the fields of the table. The <code>INSERT</code> statement takes the following required clauses:<br>
+The <code>INTO</code> clause, specifies the table and columns where data is added too.<br>
+The <code>VALUES</code> clause, specifies that data points that are added to the table.</p>
+</li>
+<li>
+<p>DELETE: Removes data from a table in a relational database. The <code>DELETE</code> command supports the following additional clauses;<br>
+The <code>FROM</code> clause, specifies the table from which data will be deleted from.<br>
+The <code>WHERE</code> clause, which allows filtering of results that meet specific conditions.</p>
+</li>
+</ul>
+<p>Care must be taken to maintain referential integrity when adding, 
+modifying or deleting records with related tables, such as tables that 
+describe many-to-many relationships. For this reason SQL <code>TRIGGERS</code>
+ should be added to relational tables to ensure that all necessary 
+changes in response to a command are made at the same time and that the 
+referential integrity of the database is maintained.</p>
+<p>The following is an example of a valid SQL syntax query using the <code>SELECT</code> command demonstrating the retrieval of OrderTimeKey and SumSales records <code>FROM</code> the FactShopSales table<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token comment"># Syntax for `SELECT` commands </span>
+
+<span class="token keyword keyword-SELECT">SELECT</span> OrderTimeKey<span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>SalesPrice<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> SumSales
+<span class="token keyword keyword-FROM">FROM</span> FactShopSales
+<span class="token keyword keyword-WHERE">WHERE</span> OrderTimeKey <span class="token operator">&gt;</span> <span class="token string">'20120405'</span>
+<span class="token keyword keyword-GROUP">GROUP</span> <span class="token keyword keyword-BY">BY</span> OrderTimeKey
+<span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> OrderTimeKey<span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="question-6">Question 6:</h2>
+
+<p>Relational database make data manipulation highly effective using SQL
+ queries. Describe how the INNER JOIN query retrieves data from multiple
+ tables.</p>
+<hr>
+<p>The JOIN query is a type of DML that creates a new tables that 
+returns all rows from tables where the key record of one table is equal 
+to the key values of one or more other tables. An INNER JOIN is the 
+default behaviour of the JOIN query which returns the intersecting 
+records of two or more tables where the specified key value matches. <sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup></p>
+<p>The INNER JOIN is differentiated from other types of joins in the following ways:</p>
+<ul>
+<li>
+<p>FULL OUTER JOIN: Return all values from both tables, displaying NULL 
+values for any columns where records for a key value can't be found.</p>
+</li>
+<li>
+<p>RIGHT OUTER JOIN: Returns all records from the right table, 
+displaying NULL values for any columns where records for a key value 
+can't be found in the left table.</p>
+</li>
+<li>
+<p>LEFT OUTER JOIN: Returns all records from the left table, displaying 
+NULL values for any columns where records for a key value can't be found
+ in the left table.</p>
+</li>
+</ul>
+<p>Special consideration should be taken when preforming INNER JOINS 
+with tables that contain NULL values. NULL values do not compare 
+equivalently with any other value (including NULL), unless they are 
+specifically addressed with a predicate condition.</p>
+<p>An example of valid use of the <code>INNER JOIN</code> Syntax is below:</p>
+<p>This syntax compares rows of <code>table1</code> with <code>table2</code> to check if the condition specified following the <code>ON</code> statement is met.</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> column_name<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword keyword-FROM">FROM</span> table1
+<span class="token keyword keyword-INNER">INNER</span> <span class="token keyword keyword-JOIN">JOIN</span> table2
+<span class="token keyword keyword-ON">ON</span> table1<span class="token punctuation">.</span>column_name <span class="token operator">=</span> table2<span class="token punctuation">.</span>column_name
+<span class="token keyword keyword-WHERE">WHERE</span> 
+</pre><h2 class="mume-header" id="bibliography">Bibliography</h2>
+
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Kent, W. (1981) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM 26(2). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Codd, E. F. (2002). A relational 
+model of data for large shared data banks. In Software pioneers (pp. 
+263-294). Springer, Berlin, Heidelberg. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Codd, E. F. (1972). Further normalization of the data base relational model. Data base systems, 6, 33-64. <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Codd, E. F., &amp; EF, C. (1975). Recent Investigations in Relational Data Base Systems. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="http://docs.sqlalchemy.org/">Docs.sqlalchemy.org</a>. 2021. Basic Relationship Patterns — SQLAlchemy 1.4 Documentation. [online] Available at: <a href="https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html">https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html</a> [Accessed 28 November 2021]. <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="http://docs.oracle.com/">Docs.oracle.com</a>. 2010. ATG Repository Guide. [online] Available at: <a href="https://docs.oracle.com/cd/E26180_01/Platform.94/RepositoryGuide/html/index.html">https://docs.oracle.com/cd/E26180_01/Platform.94/RepositoryGuide/html/index.html</a> [Accessed 28 November 2021] <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Grefen, P. W., &amp; Apers, P. M. 
+(1993). Integrity control in relational database systems—an overview. 
+Data &amp; Knowledge Engineering, 10(2), 187-223. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Daum, B. (2003). 11 - Reality 
+Check: The World Is Relational. In B. Daum (Ed.), Modeling Business 
+Objects with XML Schema (pp. 395–444). Morgan Kaufmann. <a href="https://doi.org/10.1016/B978-155860816-0/50013-6">https://doi.org/10.1016/B978-155860816-0/50013-6</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Van Der Lans, Rick F. The SQL standard: a complete guide reference. Prentice Hall International (UK) Ltd., 1989. <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>SELECT (Transact-SQL) - SQL Server. <a href="http://docs.microsoft.com/">Docs.microsoft.com</a>. (2021). Retrieved 28 November 2021, from <a href="https://docs.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15</a>. <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>Mahajan, G. (2021). A 
+step-by-step walkthrough of SQL Inner Join. SQL Shack - articles about 
+database auditing, server performance, data recovery, and more. 
+Retrieved 28 November 2021, from <a href="https://www.sqlshack.com/a-step-by-step-walkthrough-of-sql-inner-join/">https://www.sqlshack.com/a-step-by-step-walkthrough-of-sql-inner-join/</a>. <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  <iframe src="LachlanGreve_T3A1.2_files/console.html" id="vimvixen-console-frame" class="vimvixen-console-frame"></iframe></body></html>
