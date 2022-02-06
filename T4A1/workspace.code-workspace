@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../dev/python/tpye/src"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {},
+	"launch": {
+		"configurations": [
+			{
+				"type": "aws-sam",
+				"request": "direct-invoke",
+				"name": "src:functions.calculate_score (python3.9)",
+				"invokeTarget": {
+					"target": "code",
+					"projectRoot": "/home/lachlan/dev/python/tpye/src",
+					"lambdaHandler": "functions.calculate_score"
+				},
+				"lambda": {
+					"runtime": "python3.9",
+					"payload": {},
+					"environmentVariables": {}
+				}
+			}
+		]
+	}
+}
